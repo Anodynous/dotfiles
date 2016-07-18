@@ -70,6 +70,7 @@ get_zsh_plugins () {
     if [[ ! -d $dir/zsh-plugins/zsh-syntax-highlighting/  ]]; then
         git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $dir/zsh_plugins/
     fi
+}
 
 install_zsh
 get_zsh_plugins
