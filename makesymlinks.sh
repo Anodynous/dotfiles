@@ -8,7 +8,7 @@
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files="bashrc vimrc zlogin zlogout zpreztorc zprofile zshenv zshrc zprezto"    # list of files/folders to symlink in homedir
+files="bashrc vimrc zlogin zlogout zpreztorc zprofile zshenv zshrc zprezto zsh-plugins"    # list of files/folders to symlink in homedir
 
 ##########
 
@@ -34,7 +34,7 @@ install_zsh () {
 # Test to see if zshell is installed.  If it is:
 if [ -f /bin/zsh -o -f /usr/bin/zsh ]; then
     # Clone prezto repository from GitHub only if it isn't already present
-    if [[ ! -d $dir/prezto/ ]]; then
+    if [[ ! -d $dir/zprezto/ ]]; then
         git clone https://github.com/sorin-ionescu/prezto.git
     fi
     # Set the default shell to zsh if it isn't currently set to zsh

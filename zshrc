@@ -10,6 +10,10 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
+# Source syntax-highlighting
+source .zsh-plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh 
+
+
 # Customize to your needs...
 unsetopt CORRECT                      # Disable autocorrect guesses. Happens when typing a wrong
                                       # command that may look like an existing one.
