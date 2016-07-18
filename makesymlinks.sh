@@ -62,4 +62,15 @@ else
 fi
 }
 
+get_zsh_plugins () {
+# Clone history-substring-search & syntax-highlighting repository from GitHub only if they aren't already present in zsh_plugins
+    if [[ ! -d $dir/zsh-plugins/zsh-history-substring-search/  ]]; then
+        git clone https://github.com/zsh-users/zsh-history-substring-search $dir/zsh_plugins/
+    fi
+    if [[ ! -d $dir/zsh-plugins/zsh-syntax-highlighting/  ]]; then
+        git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $dir/zsh_plugins/
+    fi
+
 install_zsh
+get_zsh_plugins
+
