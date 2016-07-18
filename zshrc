@@ -15,6 +15,13 @@ source .zsh-plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 # Source history-substring-search | has to be loaded after syntax-highligting
 source .zsh-plugins/zsh-history-substring-search/zsh-history-substring-search.zsh  
 
+#####
+# keybinds for 'home' and 'end' keys
+###
+bindkey  "^[[1~"   beginning-of-line
+bindkey  "^[[4~"   end-of-line
+#####
+
 ######
 # keybinds for history-substring-search
 ##
