@@ -421,3 +421,14 @@ endfunction
 " if has("autocmd")
 "   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 "endif
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" My own additions
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+augroup relativeNum
+        autocmd!
+        au FocusLost * :set number
+        au FocusGained * :set relativenumber
+        autocmd InsertEnter * :set number
+        autocmd InsertLeave * :set relativenumber
+augroup END
