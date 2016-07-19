@@ -46,3 +46,9 @@ expand-or-complete-with-dots() {      # This bunch of code displays red dots whe
 }
 zle -N expand-or-complete-with-dots
 bindkey "^I" expand-or-complete-with-dots
+
+# custom alias for CS50
+maker() {
+    echo "clang -ggdb -std=c99 -Wall -Werror ${1} -lcrypt -lcs50 -lm -o $1";
+    clang -ggdb -std=c99 -Wall -Werror ${1} -lcrypt -lcs50 -lm -o $1 ;
+}

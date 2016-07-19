@@ -115,3 +115,9 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+# alias for CS50
+maker() {
+    echo "clang -ggdb -std=c99 -Wall -Werror ${1}.c -lcrypt -lcs50 -lm -o $1";
+    clang -ggdb -std=c99 -Wall -Werror ${1}.c -lcrypt -lcs50 -lm -o $1 ;
+}
