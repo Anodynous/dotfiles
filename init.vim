@@ -47,12 +47,18 @@ set nocompatible         " get rid of Vi compatibility mode. SET FIRST!
 call plug#begin('~/.vim/plugged')   " Start Plug.vim plugin manager
 Plug 'scrooloose/nerdtree'
 Plug 'Shougo/deoplete.nvim'
-"Plug 'zchee/deoplete-clang'
+Plug 'SirVer/ultisnips'
+Plug 'tpope/vim-surround'
+Plug 'zchee/deoplete-clang'
 call plug#end()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Deoplete
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:deoplete#enable_at_startup = 1
+
+" deoplete-clang options
+let g:deoplete#sources#clang#libclang_path = "/usr/lib/llvm-3.8/lib/libclang.so.1"
+let g:deoplete#sources#clang#clang_header = "/usr/include/clang/"
 
 if !exists('g:deoplete#omni#input_patterns')
   let g:deoplete#omni#input_patterns = {}
@@ -63,6 +69,14 @@ autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
 " deoplete tab-complete
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Ultisnips 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Own General Additions 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set pastetoggle=<F2>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
