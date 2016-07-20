@@ -39,12 +39,18 @@
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+set nocompatible         " get rid of Vi compatibility mode. SET FIRST!
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Plugin management
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+call plug#begin('~/.vim/plugged')   " Start Plug.vim plugin manager
+Plug 'scrooloose/nerdtree'
+call plug#end()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set nocompatible         " get rid of Vi compatibility mode. SET FIRST!
-
 " Sets how many lines of history VIM has to remember
 set history=500
 

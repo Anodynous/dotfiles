@@ -49,6 +49,6 @@ bindkey "^I" expand-or-complete-with-dots
 
 # custom alias for CS50
 maker() {
-    echo "clang -ggdb -std=c99 -Wall -Werror ${1} -lcrypt -lcs50 -lm -o $1";
-    clang -ggdb -std=c99 -Wall -Werror ${1} -lcrypt -lcs50 -lm -o $1 ;
+    echo "clang -ggdb -std=c99 -Wall -Werror ${1}.c -lcrypt -lcs50 -lm -o $1";
+    clang -ggdb -std=c99 -Wall -Werror ${1}.c -lcrypt -lcs50 -lm -o $1 ;
 }
