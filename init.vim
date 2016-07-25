@@ -49,7 +49,9 @@ Plug 'scrooloose/nerdtree'
 Plug 'Shougo/deoplete.nvim'
 Plug 'SirVer/ultisnips'
 Plug 'tpope/vim-surround'
-Plug 'zchee/deoplete-clang'
+Plug 'zchee/deoplete-clang' " Autocomplete for c/c++
+Plug 'zchee/deoplete-jedi' " Autocomplete for Python
+"Plug 'Lokaltog/powerline'
 call plug#end()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Deoplete
@@ -171,7 +173,9 @@ set tm=500
 " Add a bit extra margin to the left
 set foldcolumn=1
 
-
+" Enable folding 
+set foldmethod=indent
+set foldlevel=99
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -204,9 +208,9 @@ set ffs=unix,dos,mac
 " => Files, backups and undo
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Turn backup off, since most stuff is in SVN, git et.c anyway...
-set nobackup
-set nowb
-set noswapfile
+"set nobackup
+"set nowb
+"set noswapfile
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -238,14 +242,16 @@ set wrap "Wrap lines
 " Super useful! From an idea by Michael Naumann
 vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
 vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
-
-
+" Disable mouse visual mode, as it interferes with pasting in Putty
+set mouse=r
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Moving around, tabs, windows and buffers
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
+" Map <Space> to / (search) and Ctrl-<Space> to folding
 map <space> /
-map <c-space> ?
+map <C-@> za
+map <C-Space> za
+"map <c-space> ?
 
 " Disable highlight when <leader><cr> is pressed
 map <silent> <leader><cr> :noh<cr>
