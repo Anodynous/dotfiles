@@ -47,6 +47,7 @@ set nocompatible         " get rid of Vi compatibility mode. SET FIRST!
 
 call plug#begin('~/.vim/plugged')   " Start Plug.vim plugin manager
 Plug 'scrooloose/nerdtree'
+"Plug 'Lokaltog/powerline'
 call plug#end()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
